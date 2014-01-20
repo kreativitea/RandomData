@@ -1,0 +1,9 @@
+birthdate: "{range:1980,1999}"
+sex: "{choice:m,f}"
+firstname: "{name:first}"
+lastname: "{name:last}"
+test: true
+city: "{address:city}"
+state: "{address:state}"
+address: "{address:address}"
+zip: "{address:zip}"

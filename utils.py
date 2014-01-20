@@ -1,6 +1,11 @@
 import os
 import json
 
+try:
+    import yaml
+except ImportError:
+    yaml = None
+
 
 def root():
     ''' Assuming that this function is in root.utils, returns the root directory
@@ -18,5 +23,10 @@ def loadfile(filename, _format=None):
         return data
     elif _format=='json':
         return json.loads(data)
+    elif _format=='yaml':
+        if yaml:
+            return yaml.load(data)
+        else:
+            print "yaml support is not currently installed."
     elif _format=='split':
         return data.split()
